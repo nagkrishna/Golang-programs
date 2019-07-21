@@ -39,6 +39,8 @@ Loop:
 			Transfer()
 		case 5:
 			break Loop
+		//case 6:
+		//	Armstrong()
 		default:
 			fmt.Println("Wrong Input!")
 		}
