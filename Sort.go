@@ -69,7 +69,7 @@ func IntegerSort() {
 	fmt.Print("How many Integers you want to sort:")
 	fmt.Scanln(&num)
 	IntSlice = make([]int, num)
-	fmt.Print("Enter ", num, " Integers to sort:")
+	fmt.Print("Enter", num, "Integers to sort:")
 	for i = 0; i < num; i++ {
 		fmt.Scanln(&IntSlice[i])
 	}
