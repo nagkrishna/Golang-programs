@@ -11,7 +11,7 @@ type Account struct {
 
 var m map[int]Account
 
-func main() {
+func BankApp() {
 	m = make(map[int]Account)
 	var Name string
 	var x, Id, Bal int
