@@ -5,9 +5,9 @@ import (
 	"sort"
 )
 
-var IntSlice []int
-var FloatSlice []float64
-var StringSlice []string
+var IntsSlice []int
+var FloatsSlice []float64
+var StringsSlice []string
 
 func SortEx() {
 Loop:
@@ -68,61 +68,71 @@ func IntegerSort() {
 	var num, i int
 	fmt.Print("How many Integers you want to sort:")
 	fmt.Scanln(&num)
-	IntSlice = make([]int, num)
+	IntsSlice = make([]int, num)
 	fmt.Print("Enter", num, "Integers to sort:")
 	for i = 0; i < num; i++ {
-		fmt.Scanln(&IntSlice[i])
+		fmt.Scanln(&IntsSlice[i])
 	}
 	fmt.Println("The sorted Integers are:")
-	sort.Ints(IntSlice)
-	fmt.Println(IntSlice)
+	sort.Ints(IntsSlice)
+	fmt.Println(IntsSlice)
+	/*fmt.Println("The Reverse order is:")
+	s := IntsSlice
+	sort.Sort(sort.Reverse(sort.IntSlice[s]))
+	fmt.Println(IntsSlice)*/
 }
 
 func FloatSort() {
 	var num, i int
 	fmt.Println("How many Float Numbers you want to sort:")
 	fmt.Scanln(&num)
-	FloatSlice = make([]float64, num)
+	FloatsSlice = make([]float64, num)
 	fmt.Println("Enter", num, "Float Numbers to sort:")
 	for i = 0; i < num; i++ {
-		fmt.Scanln(&FloatSlice[i])
+		fmt.Scanln(&FloatsSlice[i])
 	}
 	fmt.Println("The sorted Float Numbers are:")
-	sort.Float64s(FloatSlice)
-	fmt.Println(FloatSlice)
+	sort.Float64s(FloatsSlice)
+	fmt.Println(FloatsSlice)
+	/*fmt.Println("The Reverse order is:")
+	sort.Sort(sort.Reverse(sort.Float64Slice[FloatsSlice]))
+	fmt.Println(FloatsSlice)*/
 }
 
 func StringSort() {
 	var num, i int
 	fmt.Println("How many Strings you want to sort:")
 	fmt.Scanln(&num)
-	StringSlice = make([]string, num)
+	StringsSlice = make([]string, num)
 	fmt.Println("Enter", num, "Strings to sort:")
 	for i = 0; i < num; i++ {
-		fmt.Scanln(&StringSlice[i])
+		fmt.Scanln(&StringsSlice[i])
 	}
 	fmt.Println("The sorted Strings are:")
-	sort.Strings(StringSlice)
-	fmt.Println(StringSlice)
+	sort.Strings(StringsSlice)
+	fmt.Println(StringsSlice)
+	//fmt.Println("The Reverse order is:")
+	//sort.Sort(sort.Reverse(sort.StringSlice[StringsSlice]))
+	//fmt.Println(StringsSlice)
 }
 
 func IntegerSearch() {
 	var num int
 	fmt.Print("Enter an Integer Number to search:")
 	fmt.Scanln(&num)
-	fmt.Println(sort.SearchInts(IntSlice, num))
+	fmt.Println(sort.SearchInts(IntsSlice, num))
 }
 
 func FloatSearch() {
 	var num float64
 	fmt.Print("Enter a Float Number to search:")
 	fmt.Scanln(&num)
-	fmt.Println(sort.SearchFloat64s(FloatSlice, num))
+	fmt.Println(sort.SearchFloat64s(FloatsSlice, num))
 }
 
 func StringSearch() {
 	var num string
-	fmt.Print("Enter an Integer Number to search:")
+	fmt.Print("Enter a String to search:")
 	fmt.Scanln(&num)
-	fmt.Println(sort.SearchStrings(StringSlice, num))
+	fmt.Println(sort.SearchStrings(StringsSlice, num))
 }
