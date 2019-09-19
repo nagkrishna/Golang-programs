@@ -12,12 +12,12 @@ import (
 func main() {
 	r := httprouter.New()
 	uc := controllers.NewUserController(getSession())
-	// r.GET("/", uc.Index)
-	r.GET("/user/:name/:otp", uc.GetUser)
-	r.GET("/user/:name", uc.CreateUserinfo)
-	// r.DELETE("/user/:id", uc.DeleteUser)
-	// r.PUT("/user/", uc.UpdateUser)
-	http.ListenAndServe(":8088", r)
+	r.GET("/", uc.Index)
+	r.GET("/user/:id", uc.GetUser)
+	r.POST("/user", uc.CreateUser)
+	r.DELETE("/user/:id", uc.DeleteUser)
+	r.PUT("/user/", uc.UpdateUser)
+	http.ListenAndServe(":8080", r)
 }
 
 func getSession() *mgo.Session {
